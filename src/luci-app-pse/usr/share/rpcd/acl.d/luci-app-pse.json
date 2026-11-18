@@ -1,0 +1,16 @@
+{
+	"luci-app-pse": {
+		"description": "Grant access to PSE status and control via ethtool",
+		"read": {
+			"file": {
+				"/usr/sbin/ethtool --show-pse lan*": [ "exec" ]
+			}
+		},
+		"write": {
+			"file": {
+				"/usr/sbin/ethtool --set-pse lan* c33-pse-admin-control *": [ "exec" ],
+				"/usr/sbin/ethtool --set-pse lan* c33-pse-avail-pw-limit *": [ "exec" ]
+			}
+		}
+	}
+}

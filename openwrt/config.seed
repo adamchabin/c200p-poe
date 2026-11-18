@@ -1,0 +1,10 @@
+# OpenWrt .config fragment for the Cudy C200P PoE build.
+# Apply on top of the PR 26334 tree:
+#   cp openwrt/config.seed .config && make defconfig
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt7621=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_cudy_c200p=y
+CONFIG_PACKAGE_kmod-pse-icplus-ip804=y
+CONFIG_PACKAGE_ethtool-full=y
+CONFIG_PACKAGE_luci=y
+CONFIG_PACKAGE_luci-ssl=n
